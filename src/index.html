@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="./modules/main.js"></script>
+    <link rel="stylesheet" href="./css/stylesheet.css">
+    <title>Rock paper scissors</title>
+</head>
+
+<body>
+    <section id="menu">
+        <header id="top">
+            <h1>Rock paper scissors</h1>
+        </header>
+        <main id="main">
+            <form action="">
+                <input type="hidden" value="start" id="path">
+                <label for="playerName">Player name</label>
+                <input type="text" id="playerName" maxlength="10">
+                <button type="submit" value="submit">Submit</button>
+            </form>
+        </main>
+        <footer id="bottom"></footer>
+    </section>
+    
+    <section id="game" class="hidden">
+        <header id="top">
+            <h3>Score: 0</h3>
+            <div>
+                <h1 id="player"> </h1>
+                <h1 id="computer">vs Computer</h1>
+            </div>
+            <ol>Highscore</ol>
+        </header>
+        <main id="main">
+            <section id="resultContainer">
+                <h3 id="result"></h3>
+            </section>
+            <section id="imgContainer">
+                <img id="rock">
+                <img id="paper">
+                <img id="scissors">
+            </section>
+        </main>
+        <footer id="bottom">
+            <button id="quit" value="quit">Quit</button>
+        </footer>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,267 @@
+/* Box-sizing and resets */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Body */
+body {
+    height: 100vh;
+    width: 100vw;
+    background: black;
+    perspective: 100;
+}
+
+/* Header */
+
+#top {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 15%;
+    background-color: black;
+    border-bottom: #01D5DA 2px solid;
+
+}
+
+#top div {
+    display: flex;
+}
+
+/*-----------Main------------*/
+
+#main {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    background-image: linear-gradient(0deg, transparent 0px, #01D5DA 2px, transparent 4px), linear-gradient(90deg, transparent 0px, #01D5DA 2px, transparent 4px);
+    background-size: 64px 64px;
+    height: 200%;
+    perspective: 100;
+    position: relative;
+    transform-origin: center top;
+    animation: flyin 1600ms ease-in-out 300ms forwards, return-to-normal 1s ease-in-out 2500ms forwards;
+}
+
+#game #main {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    background-image: linear-gradient(0deg, transparent 0px, #01D5DA 2px, transparent 4px), linear-gradient(90deg, transparent 0px, #01D5DA 2px, transparent 4px);
+    background-size: 64px 64px;
+    height: 200%;
+    perspective: 100;
+    position: relative;
+    transform-origin: center top;
+    animation: flyin 1600ms ease-in-out 300ms forwards, return-to-normal 1s ease-in-out 2500ms forwards;
+    flex-direction: column;
+    text-align: center;
+}
+
+#main:before,
+#main:after {
+    content: "";
+    display: block;
+    position: absolute;
+    background: #01D5DA;
+    height: 10px;
+    width: 200px;
+    transform: rotateX(-10deg);
+    opacity: 0;
+    top: 32px;
+    box-shadow: 0 -5px 15px #01D5DA;
+    animation: lightwall 5s ease-in 2000ms forwards;
+}
+
+#main:after {
+    right: 0;
+    height: 10px;
+    top: 500px;
+    box-shadow: 0 -10px 50px 2px #01D5DA;
+    animation: lightwall 5s ease-in 2000ms;
+}
+
+/* Start section */
+#menu {
+    height: 100vh;
+    width: 100vw;
+}
+
+/* Game section */
+#game {
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* Bottom section */
+#bottom {
+    position: sticky;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    height: 10%;
+}
+
+#quit {
+    height: 30px;
+    width: 100px;
+}
+
+/* Images */
+img {
+    height: 200px;
+    aspect-ratio: 1/1;
+    margin: 20px;
+    margin-top: 50px;
+    border-radius: 30%;
+}
+
+.compImg {
+    border: 2px solid transparent;
+    box-shadow: inset 0 0 60px 60px #01D5DA, 0 0 60px #ffa500;
+    border-radius: 30%;
+}
+
+.playerImg {
+    border: 2px solid transparent;
+    box-shadow: inset 0 0 60px #01D5DA, 0 0 60px #01D5DA;
+    border-radius: 30%;
+}
+
+/* Hidden elements */
+.hidden {
+    display: none;
+}
+
+/* Player and computer names */
+#player {
+    margin-right: 5px;
+    color: #01D5DA;
+}
+
+#computer {
+    color: #ffa500;
+}
+
+/* Headings */
+h1 {
+    order: 1;
+    text-transform: capitalize;
+    color: #01D5DA;
+}
+
+h3 {
+    order: 0;
+    text-transform: capitalize;
+    color: #01D5DA;
+}
+
+#result{
+background-color: black;
+font-size: 50px;
+}
+
+#resultContainer{
+    height: 50px;
+}
+
+/* List and list items */
+ol {
+    order: 2;
+    padding: 0 10px 0 20px;
+    border: solid #01D5DA 2px;
+    width: fit-content;
+    height: fit-content;
+    color: #01D5DA;
+}
+
+li {
+    text-transform: capitalize;
+    color: #01D5DA;
+}
+
+/* Form */
+label {
+    text-transform: capitalize;
+    font-weight: bolder;
+    font-size: x-large;
+    color: #01D5DA;
+    background-color: black;
+}
+
+form {
+    height: 100px;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+
+#playerName {
+    height: 25;
+}
+
+#playerName:hover {
+    box-shadow: 0 0 20px 10px #01D5DA;
+}
+
+/* Buttons */
+button {
+    background-color: black;
+    color: #01D5DA;
+    padding: 5px 15px;
+    font-size: medium;
+}
+
+button:hover {
+    box-shadow: 0 0 15px 1px #01D5DA;
+}
+
+/* Tron-effect */
+
+@keyframes flyin {
+    from {
+        transform: translateY(-250px);
+    }
+
+}
+
+@keyframes lightwall {
+    0% {
+        opacity: 0;
+        width: 0;
+    }
+
+    5%,
+    50% {
+        opacity: 1;
+        width: 100%;
+    }
+
+    100% {
+        opacity: 0;
+        width: 100%;
+    }
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes return-to-normal {
+    to {
+        height: 72%;
+    }
+}
